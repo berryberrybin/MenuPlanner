@@ -6,6 +6,9 @@ import java.util.List;
 public class DietDTO {
     private List<MenuDTO> menuList;
 
+    public DietDTO(List<MenuDTO> menuList){
+        this.menuList = menuList;
+    }
     public List<MenuDTO> getMenuList() {
         return menuList;
     }
