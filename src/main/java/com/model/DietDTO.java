@@ -9,6 +9,7 @@ public class DietDTO {
     private final MenuDTO kimchi;
     private final MenuDTO main;
     private final List<MenuDTO> sideList;
+    private double score;
 
     public DietDTO(MenuDTO rice, MenuDTO soup, MenuDTO kimchi, MenuDTO main, List<MenuDTO> sideList) {
         this.rice = rice;
@@ -38,6 +39,14 @@ public class DietDTO {
         return sideList;
     }
 
+    public void setScore(double score) {
+        this.score = score;
+    }
+
+    public double getScore() {
+        return score;
+    }
+
     @Override
     public String toString() {
         return "DietDTO{" +
@@ -46,6 +55,7 @@ public class DietDTO {
                 ", kimchi=" + kimchi +
                 ", main=" + main +
                 ", sideList=" + sideList +
+                ", score=" + score +
                 '}';
     }
 }
