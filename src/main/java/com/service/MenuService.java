@@ -4,6 +4,7 @@ import com.generator.DietGenerator;
 import com.generator.RandomDietGenerator;
 import com.manager.MenuManager;
 import com.model.DietDTO;
+import com.model.DietTable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,9 +22,9 @@ public class MenuService {
         dietGenerator = new RandomDietGenerator(menuManager);
     }
 
-    public List<DietDTO> generate(int n) {
-        List<DietDTO> diets = dietGenerator.generate(n);
-        return diets;
+    public DietTable generate(int n) {
+        DietTable dietTable = dietGenerator.generate(n);
+        return dietTable;
     }
 
 }
