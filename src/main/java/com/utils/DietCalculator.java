@@ -62,6 +62,12 @@ public class DietCalculator {
     }
 
     public double calculateScoreOfDietList(List<DietDTO> dietDTOList) {
+        DietCalculator dietCalculator = new DietCalculator();
+        double sumScoreOfDiet = 0;
+        for (DietDTO dietDTO : dietDTOList) {
+            sumScoreOfDiet += dietCalculator.calculateScoreOfDiet(dietDTO);
+        }
+        double avgScoreOfDiet = sumScoreOfDiet / dietDTOList.size();
 
         List<Integer> ingredientList = new ArrayList<>();
         for (DietDTO dietDTO : dietDTOList) {
@@ -106,6 +112,6 @@ public class DietCalculator {
         }
         double countryScore = countryMax / countryNum;
 
-        return ingredientScore + countryScore;
+        return ingredientScore + countryScore + avgScoreOfDiet;
     }
 }
