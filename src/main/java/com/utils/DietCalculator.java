@@ -6,7 +6,7 @@ import com.model.MenuDTO;
 import java.util.*;
 
 public class DietCalculator {
-    public double calculateScoreOfDiet(DietDTO dietDTO) {
+    public static double calculateScoreOfDiet(DietDTO dietDTO) {
         Set<String> colorScore = new HashSet<>();
         colorScore.add(dietDTO.getRice().getColor());
         colorScore.add(dietDTO.getSoup().getColor());
@@ -61,19 +61,26 @@ public class DietCalculator {
         return colorScore.size() + ingredientScore.size() + recipeScore.size() + countryScore;
     }
 
-    public double calculateScoreOfDietList(List<DietDTO> dietDTOList) {
-        DietCalculator dietCalculator = new DietCalculator();
+    public static double calculateScoreOfDietList(List<DietDTO> dietDTOList) {
+        double avgScoreOfDiet = avgScoreOfDiet(dietDTOList);
+        double ingredientScore = ingredientScore(dietDTOList);
+        double countryScore = countryScore(dietDTOList);
+        return ingredientScore + countryScore + avgScoreOfDiet;
+    }
+
+    private static double avgScoreOfDiet(List<DietDTO> dietDTOList) {
         double sumScoreOfDiet = 0;
         for (DietDTO dietDTO : dietDTOList) {
-            sumScoreOfDiet += dietCalculator.calculateScoreOfDiet(dietDTO);
+            sumScoreOfDiet += calculateScoreOfDiet(dietDTO);
         }
-        double avgScoreOfDiet = sumScoreOfDiet / dietDTOList.size();
+        return sumScoreOfDiet / dietDTOList.size();
+    }
 
+    private static double ingredientScore(List<DietDTO> dietDTOList) {
         List<Integer> ingredientList = new ArrayList<>();
         for (DietDTO dietDTO : dietDTOList) {
             ingredientList.add(dietDTO.getMain().getIngredient());
         }
-
         Map<Integer, Integer> ingredientOfMap = new HashMap<>();
         for (int ingredient : ingredientList) {
             if (ingredientOfMap.containsKey(ingredient)) {
@@ -89,8 +96,10 @@ public class DietCalculator {
                 ingredientMax = ingredientOfMap.get(key);
             }
         }
-        double ingredientScore = ingredientMax / ingredientNum;
+        return ingredientMax / ingredientNum;
+    }
 
+    private static double countryScore(List<DietDTO> dietDTOList) {
         List<String> countryList = new ArrayList<>();
         for (DietDTO dietDTO : dietDTOList) {
             countryList.add(dietDTO.getMain().getCountry());
@@ -110,8 +119,6 @@ public class DietCalculator {
                 countryMax = countryOfMap.get(key);
             }
         }
-        double countryScore = countryMax / countryNum;
-
-        return ingredientScore + countryScore + avgScoreOfDiet;
+        return countryMax / countryNum;
     }
 }

@@ -12,9 +12,7 @@ import java.util.List;
 import java.util.Random;
 
 public class RandomDietGenerator implements DietGenerator {
-    private MenuManager menuManager;
-    DietCalculator dietCalculator = new DietCalculator();
-
+    private final MenuManager menuManager;
 
     public RandomDietGenerator(MenuManager menuManager) {
         this.menuManager = menuManager;
@@ -27,7 +25,7 @@ public class RandomDietGenerator implements DietGenerator {
             DietDTO diet = generate();
             dietList.add(diet);
         }
-        double score = dietCalculator.calculateScoreOfDietList(dietList);
+        double score = DietCalculator.calculateScoreOfDietList(dietList);
         DietTable dietTable = new DietTable(dietList, score);
         System.out.println("=====주간 메뉴 점수 출력=====");
         System.out.println(String.format("%.2f", score));
@@ -55,7 +53,7 @@ public class RandomDietGenerator implements DietGenerator {
         sideList.add(side2);
 
         DietDTO oneDayDiet = new DietDTO(rice, soup, kimchi, main, sideList);
-        double score = dietCalculator.calculateScoreOfDiet(oneDayDiet);
+        double score = DietCalculator.calculateScoreOfDiet(oneDayDiet);
         oneDayDiet.setScore(score);
         System.out.println("==식단 출력==");
         System.out.println(oneDayDiet);
