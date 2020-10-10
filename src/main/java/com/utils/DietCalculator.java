@@ -4,6 +4,8 @@ import com.model.DietDTO;
 import com.model.MenuDTO;
 
 import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class DietCalculator {
     public static double calculateScoreOfDiet(DietDTO dietDTO) {
@@ -69,11 +71,7 @@ public class DietCalculator {
     }
 
     private static double avgScoreOfDiet(List<DietDTO> dietDTOList) {
-        double sumScoreOfDiet = 0;
-        for (DietDTO dietDTO : dietDTOList) {
-            sumScoreOfDiet += calculateScoreOfDiet(dietDTO);
-        }
-        return sumScoreOfDiet / dietDTOList.size();
+        return dietDTOList.stream().mapToDouble(DietCalculator::calculateScoreOfDiet).average().orElse(0);
     }
 
     private static double ingredientScore(List<DietDTO> dietDTOList) {
@@ -81,22 +79,21 @@ public class DietCalculator {
         for (DietDTO dietDTO : dietDTOList) {
             ingredientList.add(dietDTO.getMain().getIngredient());
         }
-        Map<Integer, Integer> ingredientOfMap = new HashMap<>();
-        for (int ingredient : ingredientList) {
-            if (ingredientOfMap.containsKey(ingredient)) {
-                ingredientOfMap.put(ingredient, ingredientOfMap.get(ingredient) + 1);
-            } else {
-                ingredientOfMap.put(ingredient, 1);
-            }
-        }
-        double ingredientMax = 0;
-        double ingredientNum = ingredientOfMap.keySet().size();
-        for (int key : ingredientOfMap.keySet()) {
-            if (ingredientMax < ingredientOfMap.get(key)) {
-                ingredientMax = ingredientOfMap.get(key);
-            }
-        }
+        Map<Integer, Long> ingredientMap = ingredientList.stream()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        double ingredientMax = Collections.max(ingredientMap.values());
+        double ingredientNum = ingredientMap.keySet().size();
         return ingredientMax / ingredientNum;
+
+//        Map<Integer, Integer> ingredientMap = new HashMap<>();
+//        for (int ingredient : ingredientList) {
+//            ingredientMap.put(ingredient, ingredientMap.getOrDefault(ingredient, 0) + 1);
+//        }
+//        for (int key : ingredientMap.keySet()) {
+//            if (ingredientMax < ingredientMap.get(key)) {
+//                ingredientMax = ingredientMap.get(key);
+//            }
+//        }
     }
 
     private static double countryScore(List<DietDTO> dietDTOList) {
@@ -104,21 +101,10 @@ public class DietCalculator {
         for (DietDTO dietDTO : dietDTOList) {
             countryList.add(dietDTO.getMain().getCountry());
         }
-        Map<String, Integer> countryOfMap = new HashMap<>();
-        for (String country : countryList) {
-            if (countryOfMap.containsKey(country)) {
-                countryOfMap.put(country, countryOfMap.get(country) + 1);
-            } else {
-                countryOfMap.put(country, 1);
-            }
-        }
-        double countryMax = 0;
-        double countryNum = countryOfMap.keySet().size();
-        for (String key : countryOfMap.keySet()) {
-            if (countryMax < countryOfMap.get(key)) {
-                countryMax = countryOfMap.get(key);
-            }
-        }
+        Map<String, Long> countryMap = countryList.stream()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        double countryMax = Collections.max(countryMap.values());
+        double countryNum = countryMap.keySet().size();
         return countryMax / countryNum;
     }
 }
