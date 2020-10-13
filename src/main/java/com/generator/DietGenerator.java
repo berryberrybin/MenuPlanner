@@ -1,9 +1,7 @@
 package com.generator;
 
-import com.model.DietDTO;
-
-import java.util.List;
+import com.model.DietTable;
 
 public interface DietGenerator {
-    List<DietDTO> generate(int n);
+    DietTable generate(int n);
 }
