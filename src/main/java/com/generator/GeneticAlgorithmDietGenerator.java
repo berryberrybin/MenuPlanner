@@ -5,6 +5,7 @@ import com.manager.MenuManager;
 import com.model.DietTable;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class GeneticAlgorithmDietGenerator implements DietGenerator {
@@ -23,8 +24,8 @@ public class GeneticAlgorithmDietGenerator implements DietGenerator {
             geneDiets.add(randomDietGenerator.generate(n));
         }
 
-        // TODO score 기준 정렬
-
+        // score 기준 정렬
+        geneDiets.sort(Comparator.comparing(DietTable::getScore).reversed());
         // TODO elite 유전자 추출
 
         // TODO 돌연변이 유전자 생성
