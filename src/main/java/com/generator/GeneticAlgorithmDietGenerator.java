@@ -2,6 +2,7 @@ package com.generator;
 
 
 import com.manager.MenuManager;
+import com.model.DietDTO;
 import com.model.DietTable;
 
 import java.util.ArrayList;
@@ -20,13 +21,28 @@ public class GeneticAlgorithmDietGenerator implements DietGenerator {
         List<DietTable> geneDiets = new ArrayList<>();
         // 초기 유전자 세트 생성
         RandomDietGenerator randomDietGenerator = new RandomDietGenerator(menuManager);
-        while(geneDiets.size()<100) {
+        while (geneDiets.size() < 100) {
             geneDiets.add(randomDietGenerator.generate(n));
         }
 
         // score 기준 정렬
         geneDiets.sort(Comparator.comparing(DietTable::getScore).reversed());
         // TODO elite 유전자 추출
+        List<DietTable> eliteGeneDiets = new ArrayList<>();
+        for (int i = 0; i < geneDiets.size() * 0.2; i++) {
+            eliteGeneDiets.add(geneDiets.get(i));
+        }
+        // TODO 돌연변이 유전자 생성
+        List<DietTable> mutationGeneDiets = new ArrayList<>();
+        for (int i = 0; i < eliteGeneDiets.size(); i++) {
+            mutationGeneDiets.add(eliteGeneDiets.get(i));
+            int num = (int)(Math.random()*1)+1;
+            for(int j=0;j<num;j++) {
+                int randomGene = (int) (Math.random() * mutationGeneDiets.get(i).getDietList().size());
+                DietDTO dietDTO = randomDietGenerator.generate(n).getDietList().get(randomGene);
+                mutationGeneDiets.get(i).getDietList().set(randomGene,dietDTO);
+            }
+        }
 
         // TODO 돌연변이 유전자 생성
 
