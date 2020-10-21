@@ -4,6 +4,7 @@ package com.generator;
 import com.manager.MenuManager;
 import com.model.DietDTO;
 import com.model.DietTable;
+import com.model.MenuDTO;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -32,6 +33,7 @@ public class GeneticAlgorithmDietGenerator implements DietGenerator {
         for (int i = 0; i < geneDiets.size() * 0.2; i++) {
             eliteGeneDiets.add(geneDiets.get(i));
         }
+
         // TODO 돌연변이 유전자 생성
         List<DietTable> mutationGeneDiets = new ArrayList<>();
         for (int i = 0; i < eliteGeneDiets.size(); i++) {
@@ -47,7 +49,9 @@ public class GeneticAlgorithmDietGenerator implements DietGenerator {
         // TODO 돌연변이 유전자 생성
 
         // TODO 새로운 유전자 채워넣기
-
+        for (int i = 40; i < geneDiets.size(); i++) {
+            geneDiets.set(i,randomDietGenerator.generate(n));
+        }
         // TODO 가장 우월한 유전자 반환
         return geneDiets.get(0);
     }
