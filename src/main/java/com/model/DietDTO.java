@@ -4,11 +4,11 @@ package com.model;
 import java.util.List;
 
 public class DietDTO {
-    private final MenuDTO rice;
-    private final MenuDTO soup;
-    private final MenuDTO kimchi;
-    private final MenuDTO main;
-    private final List<MenuDTO> sideList;
+    private MenuDTO rice;
+    private MenuDTO soup;
+    private MenuDTO kimchi;
+    private MenuDTO main;
+    private List<MenuDTO> sideList;
     private double score;
 
     public DietDTO(MenuDTO rice, MenuDTO soup, MenuDTO kimchi, MenuDTO main, List<MenuDTO> sideList) {
@@ -16,6 +16,26 @@ public class DietDTO {
         this.soup = soup;
         this.kimchi = kimchi;
         this.main = main;
+        this.sideList = sideList;
+    }
+
+    public void setRice(MenuDTO rice) {
+        this.rice = rice;
+    }
+
+    public void setSoup(MenuDTO soup) {
+        this.soup = soup;
+    }
+
+    public void setKimchi(MenuDTO kimchi) {
+        this.kimchi = kimchi;
+    }
+
+    public void setMain(MenuDTO main) {
+        this.main = main;
+    }
+
+    public void setSideList(List<MenuDTO> sideList) {
         this.sideList = sideList;
     }
 
