@@ -1,8 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="8eea49d8-9e0d-47fc-a859-1219795c5e63" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/generator/GeneticAlgorithmDietGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/generator/GeneticAlgorithmDietGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/model/DietDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/model/DietDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,11 +49,21 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1hlLbUL37VXhILziNiq2dXtHWmS" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -28,6 +73,40 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RunManager" selected="Application.MenuPlannerApplication">
+    <configuration name="MenuPlannerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.MenuPlannerApplication" />
+      <module name="demo.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TsvToDml" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.utils.TsvToDml" />
+      <module name="demo.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TsvToDml" />
+        <item itemvalue="Application.MenuPlannerApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -41,5 +120,93 @@
       <updated>1600580803742</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="814" y="80" key="#Auto_Import" timestamp="1602857082060">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="814" y="80" key="#Auto_Import/0.0.1280.680@0.0.1280.680" timestamp="1602857082060" />
+    <state x="393" y="141" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600781147517">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="393" y="141" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1600781147517" />
+    <state x="446" y="25" key="#com.intellij.ide.util.MemberChooser" timestamp="1603367579172">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="446" y="25" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1603367579172" />
+    <state width="1066" height="438" key="DebuggerActiveHint" timestamp="1601123765905">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1066" height="438" key="DebuggerActiveHint/0.0.1280.680@0.0.1280.680" timestamp="1601123765905" />
+    <state width="1237" height="154" key="GridCell.Tab.0.bottom" timestamp="1602305269727">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="154" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1602305269727" />
+    <state width="1237" height="154" key="GridCell.Tab.0.center" timestamp="1602305269727">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="154" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1602305269727" />
+    <state width="1237" height="154" key="GridCell.Tab.0.left" timestamp="1602305269727">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="154" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1602305269727" />
+    <state width="1237" height="154" key="GridCell.Tab.0.right" timestamp="1602305269727">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="154" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1602305269727" />
+    <state width="1237" height="37" key="GridCell.Tab.1.bottom" timestamp="1601302199482">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="37" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1601302199482" />
+    <state width="1237" height="37" key="GridCell.Tab.1.center" timestamp="1601302199481">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="37" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1601302199481" />
+    <state width="1237" height="37" key="GridCell.Tab.1.left" timestamp="1601302199481">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="37" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1601302199481" />
+    <state width="1237" height="37" key="GridCell.Tab.1.right" timestamp="1601302199482">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="37" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1601302199482" />
+    <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1602071614039">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1602071614039" />
+    <state x="347" y="72" width="587" height="536" key="find.popup" timestamp="1601130021130">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="347" y="72" width="587" height="536" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1601130021130" />
+    <state x="37" y="0" key="new project wizard" timestamp="1600955638306">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="37" y="0" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1600955638306" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1601123944541">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1601123944541" />
   </component>
 </project>
